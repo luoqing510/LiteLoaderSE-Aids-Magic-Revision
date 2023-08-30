@@ -12,21 +12,11 @@ function postMessage(command, args) {
 }
 
 function initListener() {
-	document
-		.getElementById("source_get")
-		.addEventListener("click", sourceGetButtonClick);
-	document
-		.getElementById("source_get_local")
-		.addEventListener("click", sourceGetSelfButtonClick);
-	document
-		.getElementById("library_select")
-		.addEventListener("click", librarySelectButtonClick);
-	document
-		.getElementById("bdsPath_select")
-		.addEventListener("click", bdsPathSelectButtonClick);
-	document
-		.getElementById("source_radio_group")
-		.addEventListener("click", sourceGroupClick);
+	document.getElementById("source_get").addEventListener("click", sourceGetButtonClick);
+	document.getElementById("source_get_local").addEventListener("click", sourceGetSelfButtonClick);
+	document.getElementById("library_select").addEventListener("click", librarySelectButtonClick);
+	document.getElementById("bdsPath_select").addEventListener("click", bdsPathSelectButtonClick);
+	document.getElementById("source_radio_group").addEventListener("click", sourceGroupClick);
 	document.getElementById("command_reload").onblur = onDebuggerfocus;
 	document.getElementById("command_load").onblur = onDebuggerfocus;
 	document.getElementById("command_unload").onblur = onDebuggerfocus;
@@ -42,7 +32,7 @@ function initListener() {
 			mirroredocs: mirroredocsView.checked,
 		});
 	});
-	window.addEventListener("message", (event) => {
+	window.addEventListener("message", event => {
 		const message = event.data; // The JSON data our extension sent
 		console.log(message);
 		switch (message.command) {
@@ -133,7 +123,7 @@ function setDefaultConfig(args) {
 	const autoSplitDocsView = document.getElementById("autoSplitDocs");
 	console.log(args.autoSplitDocs);
 	autoSplitDocsView.checked = args.autoSplitDocs;
-	
+
 	const mirroredocsView = document.getElementById("mirroredocs");
 	console.log(args.mirroredocs);
 	mirroredocsView.checked = args.mirroredocs;

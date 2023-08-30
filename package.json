@@ -1,12 +1,12 @@
 {
-	"name": "LLScriptHelper",
-	"displayName": "LiteLoaderSE-Aids",
-	"publisher": "moxicat",
+	"name": "LLScriptHelper-MR",
+	"displayName": "LiteLoaderSE-Aids-魔改版",
+	"publisher": "luoQ",
 	"description": "Assist in the development of LLScript's plugin",
 	"version": "2.2.0",
 	"preview": true,
 	"icon": "images/icon.png",
-	"repository": "https://github.com/LiteLScript-Dev/LiteLoaderSE-Aids",
+	"repository": "https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision",
 	"engines": {
 		"vscode": "^1.58.0"
 	},
@@ -187,21 +187,21 @@
 				},
 				"extension.llseaids.reloadCommand": {
 					"type": "string",
-					"default": "ll reload \"{fileName}\"",
+					"default": "ll reload \"{ModName}\"",
 					"description": "调试器重载指令",
 					"scope": "resource",
 					"order": 3
 				},
 				"extension.llseaids.loadCommand": {
 					"type": "string",
-					"default": "ll load \"{filePath}\"",
+					"default": "ll load \"{ModName}\"",
 					"description": "调试器加载指令",
 					"scope": "resource",
 					"order": 4
 				},
 				"extension.llseaids.unloadCommand": {
 					"type": "string",
-					"default": "ll unload \"{fileName}\"",
+					"default": "ll unload \"{ModName}\"",
 					"description": "调试器卸载指令",
 					"scope": "resource",
 					"order": 5
@@ -222,7 +222,7 @@
 				},
 				"extension.llseaids.mirroredocs": {
 					"type": "boolean",
-					"default": true,
+					"default": false,
 					"description": "使用国内友好的镜像文档(byXCLHove)",
 					"scope": "resource",
 					"order": 8

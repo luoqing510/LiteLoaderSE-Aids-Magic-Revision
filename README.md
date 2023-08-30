@@ -1,6 +1,10 @@
+
 # LiteLoaderSE-Aids
 
-适用于 Visual Studio Code 的 [LiteLoaderSE](https://github.com/LiteLDev/LiteLoaderBDS) 开发辅助工具
+原作者: [moxicat](https://github.com/LiteLDev/LiteLoaderSE-Aids)
+魔改者: [luoQ](https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision)
+
+适用于 Visual Studio Code 的 [LeviLamina](https://github.com/LiteLDev/LeviLamina) 开发辅助工具
 
 库贡献请看 [HelperLib](https://github.com/LiteLScript-Dev/HelperLib)(TypeScript)
 

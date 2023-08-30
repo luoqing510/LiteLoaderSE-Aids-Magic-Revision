@@ -9,6 +9,7 @@ import "./TerminalConst";
 import * as path from "path";
 import { CommandType, TerminalKeys, TerminalState } from "./TerminalConst";
 import { getLiteLoaderpath } from "../utils/FileUtils";
+import { existsSync, readFile, readFileSync } from "fs";
 // import { getBDSCwdPath, getBDSPath } from "../utils/WorkspaceUtil";
 export class TerminalHelper {
 	static terminal: vscode.Terminal | undefined;
@@ -36,6 +37,13 @@ export class TerminalHelper {
 		});
 	}
 	registerCommands() {
+		function ModName(path: string) {
+			let _path = "";
+			path.split("\\").forEach((val, index, ary) => {
+				if (val === "plugins") { _path = ary[index + 1]; }
+			});
+			return _path;
+		}
 		TerminalHelper.context.subscriptions.push(
 			vscode.commands.registerCommand("extension.llseaids.runconsole", () => {
 				this.runConsole();
@@ -44,15 +52,15 @@ export class TerminalHelper {
 				this.stopConsole();
 			}),
 			vscode.commands.registerCommand("extension.llseaids.load", (uri) => {
-				const _path = uri.fsPath;
+				const _path = ModName(uri.fsPath);
 				this.managePlugin(CommandType.LOAD, _path);
 			}),
 			vscode.commands.registerCommand("extension.llseaids.unload", (uri) => {
-				const _path = path.parse(uri.fsPath).base;
+				const _path = ModName(uri.fsPath);
 				this.managePlugin(CommandType.UNLOAD, _path);
 			}),
 			vscode.commands.registerCommand("extension.llseaids.reload", (uri) => {
-				const _path = path.parse(uri.fsPath).base;
+				const _path = ModName(uri.fsPath);
 				this.managePlugin(CommandType.RELOAD, _path);
 			})
 		);
@@ -141,7 +149,7 @@ export class TerminalHelper {
 			vscode.window.showErrorMessage("" + err);
 		}
 	}
-	managePlugin(type: CommandType, filePath: string) {
+	managePlugin(type: CommandType, ModName: string) {
 		const state = TerminalHelper.context.workspaceState.get(TerminalKeys.STATE);
 		if (
 			TerminalHelper.terminal !== undefined &&
@@ -153,7 +161,7 @@ export class TerminalHelper {
 						.getConfiguration("extension.llseaids")
 						.get("loadCommand") as string;
 					TerminalHelper.terminal.sendText(
-						command_load.replace("{filePath}", filePath)
+						command_load.replace("{ModName}", ModName)
 					);
 					break;
 				case CommandType.UNLOAD:
@@ -161,7 +169,7 @@ export class TerminalHelper {
 						.getConfiguration("extension.llseaids")
 						.get("unloadCommand") as string;
 					TerminalHelper.terminal.sendText(
-						command_unload.replace("{fileName}", filePath)
+						command_unload.replace("{ModName}", ModName)
 					);
 					break;
 				case CommandType.RELOAD:
@@ -169,7 +177,7 @@ export class TerminalHelper {
 						.getConfiguration("extension.llseaids")
 						.get("reloadCommand") as string;
 					TerminalHelper.terminal.sendText(
-						command_reload.replace("{fileName}", filePath)
+						command_reload.replace("{ModName}", ModName)
 					);
 					break;
 				default:
