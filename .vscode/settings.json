@@ -31,5 +31,6 @@
 		"other": "on",
 		"comments": "off",
 		"strings": "on"
-	}
+	},
+	"extension.llseaids.bdsPath": "d:\\Servers\\game\\1.21-1.3.4"
 }
