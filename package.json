@@ -3,7 +3,7 @@
 	"displayName": "LiteLoaderSE-Aids-魔改版",
 	"publisher": "luoQ",
 	"description": "Assist in the development of LLScript's plugin",
-	"version": "0.3.0",
+	"version": "0.3.5",
 	"preview": true,
 	"icon": "images/icon.png",
 	"repository": "https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision",
@@ -231,12 +231,14 @@
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
+		"vscode:prepublish": "pnpm run compile",
+		"compile": "webpack --mode production",
 		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
+		"pretest": "pnpm run compile && pnpm run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"test": "vscode-test",
+		"package": "pnpm vsce package --no-dependencies",
+		"publish": "pnpm vsce publish --no-dependencies"
 	},
 	"devDependencies": {
 		"@types/node": "14.x",
@@ -246,11 +248,16 @@
 		"@typescript-eslint/eslint-plugin": "^4.26.0",
 		"@typescript-eslint/parser": "^4.26.0",
 		"eslint": "^7.27.0",
+		"terser-webpack-plugin": "^5.3.10",
+		"ts-loader": "^9.5.1",
 		"typescript": "^4.3.2",
-		"vscode-test": "^1.5.2"
+		"vscode-test": "^1.5.2",
+		"webpack": "^5.93.0",
+		"webpack-cli": "^5.1.4"
 	},
 	"dependencies": {
 		"@vscode/debugadapter": "^1.57.0",
+		"@vscode/debugprotocol": "^1.66.0",
 		"@vscode/webview-ui-toolkit": "^1.0.1",
 		"async": "^3.2.0",
 		"axios": "^0.27.2",

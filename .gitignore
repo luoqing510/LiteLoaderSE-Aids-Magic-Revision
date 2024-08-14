@@ -3,3 +3,5 @@ node_modules/*
 *.vsix
 settings.json
 .vscode/settings.json
+webpack.config.js
+pnpm-lock.yaml

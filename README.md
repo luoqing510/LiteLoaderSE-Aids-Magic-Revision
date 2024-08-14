@@ -4,12 +4,6 @@
 
 魔改者: [luoQ](https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision) 本项目链接
 
-## 1.优化
-- 原 "{filename}" 与 "{filePath}" 统一为 "{ModName}"
-
-## 2.文档
-- 文档默认网站改为最新的中文版
-
 适用于 Visual Studio Code 的 [LeviLamina](https://github.com/LiteLDev/LeviLamina) 开发辅助工具
 
 库贡献请看 [HelperLib](https://github.com/LiteLScript-Dev/HelperLib)(TypeScript)

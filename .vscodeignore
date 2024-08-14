@@ -1,4 +1,7 @@
 **/.vscode
 **/test
 **/gulpfile.js
-**/s
+**/src
+**/.gitignore 
+**/pnpm-lock.yaml
+**/tsconfig.json
