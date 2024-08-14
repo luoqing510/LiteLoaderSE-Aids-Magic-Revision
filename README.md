@@ -1,8 +1,9 @@
 
 # LiteLoaderSE-Aids
 
-原作者: [moxicat](https://github.com/LiteLDev/LiteLoaderSE-Aids)
-魔改者: [luoQ](https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision)
+原作者: [moxicat](https://github.com/LiteLDev/LiteLoaderSE-Aids) 原作者及项目链接
+
+魔改者: [luoQ](https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision) 本项目链接
 
 适用于 Visual Studio Code 的 [LeviLamina](https://github.com/LiteLDev/LeviLamina) 开发辅助工具
 
