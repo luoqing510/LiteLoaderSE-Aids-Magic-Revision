@@ -1,9 +1,14 @@
-
-# LiteLoaderSE-Aids
+# LiteLoaderSE-Aids-魔改版
 
 原作者: [moxicat](https://github.com/LiteLDev/LiteLoaderSE-Aids) 原作者及项目链接
 
 魔改者: [luoQ](https://github.com/luoqing510/LiteLoaderSE-Aids-Magic-Revision) 本项目链接
+
+## 1.优化
+- 原 "{filename}" 与 "{filePath}" 统一为 "{ModName}"
+
+## 2.文档
+- 文档默认网站改为最新的中文版
 
 适用于 Visual Studio Code 的 [LeviLamina](https://github.com/LiteLDev/LeviLamina) 开发辅助工具
 
@@ -29,7 +34,6 @@
 ## Todo
 
 - [ ] [i18n](https://github.com/microsoft/vscode-extension-samples/tree/main/i18n-sample) **Important**
-
 - [ ] 支持更新检测
 - [ ] 支持安装 [Lua 库](src\handler\LibraryHandler.ts)
 - [ ] 更多可配置项 80%

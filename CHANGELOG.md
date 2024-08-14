@@ -1,10 +1,10 @@
-## 2.2.0 - 2023-08-30
+## 0.3.1 2024-08-14
 
-### <type> Bug Fixs 
+## QWQ——>水波更新文档
 
-- JavaScript下会出席两次文档图标
-- 文档初始界面异常
+### 1.优化
+- 原 "{filename}" 与 "{filePath}" 统一为 "{ModName}"
 
-### <type> Features
+### 2.文档
+- 文档默认网站改为最新的中文版
 
-- 文档新增镜像源，默认开启 By [XCLHove](https://github.com/LiteLDev/LiteLoaderSE-Aids/issues/17)
